@@ -28,7 +28,8 @@ if len(list) < 2:
     print("The list is too short.")
     quit()
 
-# 2) If the list contains just two numbers, we may just sum it without the necessity to run for cycle:
+# 2) If the list contains just two numbers, we may just sum it without the necessity to run the for cycle.
+# This part of the code is not necessary to add to your solution, anyway it may save some time:
 elif len(list) == 2:
     count = list[0] + list[-1]
     if count == given_number:
