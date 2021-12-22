@@ -1,0 +1,1 @@
+https://analyticsindiamag.com/machine-learning-101-ten-projects-for-high-school-students-to-get-started/
