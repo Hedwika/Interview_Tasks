@@ -11,7 +11,7 @@ from apscheduler.schedulers.blocking import BlockingScheduler
 class feeMonitor:
 
     # Connect to the blockchain and get information about the latest block
-    w3 = Web3(Web3.HTTPProvider('https://mainnet.infura.io/v3/ddf58b1b9c1742a586570078c6823c23'))
+    w3 = Web3(Web3.HTTPProvider(''))
     block = w3.eth.getBlock('latest', full_transactions=True)
 
     # Set the variable to avoid duplicit blocks in the function below
