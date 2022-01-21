@@ -31,7 +31,6 @@ class FeeMonitor:
 
     # Get the latest block information
     def latest_block(self):
-        # Get information about the latest block
         block = self.w3.eth.getBlock('latest', full_transactions=True)
 
         # Condition to avoid duplicit blocks
