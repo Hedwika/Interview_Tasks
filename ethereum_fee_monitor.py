@@ -11,12 +11,11 @@ from apscheduler.schedulers.blocking import BlockingScheduler
 class FeeMonitor:
 
     def __init__(self):
-        # Connect to the blockchain and get information about the latest block
-        self.w3 = Web3(Web3.HTTPProvider(''))
-        block = self.w3.eth.getBlock('latest', full_transactions=True)
+        # Connect to the blockchain
+        self.w3 = Web3(Web3.HTTPProvider('https://mainnet.infura.io/v3/ddf58b1b9c1742a586570078c6823c23'))
 
         # Set the variable to avoid duplicit blocks in the function below
-        self.block_number = block.number
+        self.block_number = None
 
         # Set scheduler
         self.scheduler = BlockingScheduler(timezone="Europe/Berlin")
@@ -41,7 +40,7 @@ class FeeMonitor:
             fees = []
             gas_prices = []
 
-        # iterate through transactions
+            # iterate through transactions
             for key in block.transactions:
                 price_in_wei = key.gas * key.gasPrice
                 price_in_gwei = price_in_wei / self.k
